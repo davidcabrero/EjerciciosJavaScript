@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="titulo">Ejemplo SWITCH</h1>
+
+    <button onclick="ejemploSwitch()">Púlsame</button>
+    <script>
+        function ejemploSwitch(){
+            var objetoFecha = new Date()
+            var hoy = objetoFecha.getDay()
+            var diaDeLaSemana =""
+            switch(hoy){
+                case 1: diaDeLaSemana = "Lunes"; break
+                case 2: diaDeLaSemana = "Martes"; break
+                case 3: diaDeLaSemana = "Miércoles"; break
+                case 4: diaDeLaSemana = "Jueves"; break
+                case 5: diaDeLaSemana = "Viernes"; break
+                case 6: diaDeLaSemana = "Sábado"; break
+                case 0: diaDeLaSemana = "Domingo"; break
+            }
+            document.getElementById("titulo").innerHTML = diaDeLaSemana
+        }
+    </script> 
+</body>
+</html>
