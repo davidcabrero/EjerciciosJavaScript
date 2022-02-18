@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .caja {
+            position: absolute;
+            background-color: #fe0;
+            width: 64px;
+            height: 64px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mensaje">HOLA JQUERY!</div>
+    <input type="button" value="ejemplo jquery" onclick="borra()" />
+    <div id="bloque" class="caja"></div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script>
+        function borra() {
+            $('#mensaje').fadeToggle(10000)
+        }
+
+        $('#bloque').click(function () {
+            $(this).animate({ 'left': '+=50px', 'top': '+=50px' }, 'slow')
+                .animate({ 'left': '-=50px', 'top': '-=10px' }, 'slow')
+        })
+        $('#bloque').mouseenter(function () {
+            $(this).css('background-color', '#FF0000').text('HOLA!')
+        })
+        $('#bloque').mouseleave(function () {
+            $(this).css(
+                {
+                    'background-color': '#0000FF',
+                    color: 'white'
+                }
+            ).text('ADIOS!')
+        })
+        $('body').keydown(function(evento){
+            if(evento.which == 37){ //Tecla izqda del teclado
+                $('#bloque').animate({ 'left': '-=50px'}, 'slow')
+            }
+            if(evento.which == 39){ //Tecla dcha del teclado
+                $('#bloque').animate({ 'left': '+=50px'}, 'slow')
+            }
+            if(evento.which == 38){ //Tecla arriba del teclado
+                $('#bloque').animate({ 'top': '-=50px'}, 'slow')
+            }
+            if(evento.which == 40){ //Tecla abajo del teclado
+                $('#bloque').animate({ 'top': '+=50px'}, 'slow')
+            }                 
+        })
+    </script>
+</body>
+
+</html>

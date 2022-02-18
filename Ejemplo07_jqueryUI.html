@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
+</head>
+
+<body>
+    <div id="prueba">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore voluptates ipsum adipisci consectetur rerum
+        exercitationem nesciunt, suscipit doloribus delectus vel officiis distinctio consequatur cum quis error quod
+        eligendi nisi amet?
+    </div>
+    <div id="fecha">
+
+    </div>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script>
+        $('#prueba').click(function () {
+            $(this).toggle("blind")
+        })
+
+        $('#fecha').datepicker({
+            firstDay: 1,
+            changeMonth: true,
+            changeYear: true,
+            yearRange: "-50: +10",
+            showButtonPanel: true,
+            numberOfMonths: [3, 1],
+            currentText: "Hoy",
+            prevText: 'Anterior',
+            nextText: 'Siguiente',
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+                'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun',
+                'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa'],
+            weekHeader: 'Sm',
+            dateFormat: 'dd/mm/yy',
+            showWeek: true,
+        })
+
+    </script>
+</body>
+
+</html>
